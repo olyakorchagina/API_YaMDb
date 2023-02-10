@@ -70,8 +70,8 @@ docker-compose exec web python manage.py collectstatic --no-input
 
 ### Запуск проекта
 
-Проект доступен по адресу ```http://localhost/```.
+Проект доступен по адресу [http://localhost/](http://localhost/).
 
 ### Документация к проекту
 
-Документация для API после запуска доступна по адресу /redoc/.
+Документация для API после запуска доступна по адресу [/redoc/](http://localhost/redov/).
