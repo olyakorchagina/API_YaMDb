@@ -23,7 +23,7 @@
 * Simple-JWT
 * PostreSQL
 * Nginx
-* gunicorn
+* Gunicorn
 * Docker
 * DockerHub
 
@@ -54,24 +54,22 @@ DB_HOST=db
 DB_PORT=5432
 ```
 
-4. Установка и запуск приложения в контейнерах:
+4. Запустить приложения в контейнерах:
 ```bash
 docker-compose up -d --build
 ```
 
-5. Запуск миграций, создание суперюзера, сбор статики:
+5. Выполнить миграции, создать суперпользователя, собрать статику, заполнить базу данными:
 ```bash
 docker-compose exec web python manage.py migrate
 
 docker-compose exec web python manage.py createsuperuser
 
 docker-compose exec web python manage.py collectstatic --no-input
+
+docker-compose exec web python manage.py loaddata fixtures.json
 ```
-
-### Запуск проекта
-
-Проект доступен по адресу [http://localhost/](http://localhost/).
 
 ### Документация к проекту
 
-Документация для API после запуска доступна по адресу [/redoc/](http://localhost/redov/).
+Документация для API доступна по адресу [/redoc/](http://localhost/redoc/) после установки приложения.
